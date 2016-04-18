@@ -9,12 +9,14 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+bin/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
+include/
 lib/
 lib64/
 parts/
@@ -51,6 +53,7 @@ coverage.xml
 
 # Django stuff:
 *.log
+*.sqlite3
 
 # Sphinx documentation
 docs/_build/
