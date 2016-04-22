@@ -15,21 +15,20 @@
     <!-- Bootstrap core CSS -->
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <style>
     body {
-    min-height: 2000px;
-  }
+      min-height: 1200px;
+      }
 
-  .navbar-static-top {
-    margin-bottom: 19px;
-  }
-  {% block style %}
+      {% block style %}
 
-  {% endblock %}
-  </style>
+      {% endblock %}
+    </style>
 
   </head>
 
@@ -37,13 +36,18 @@
 
   {% include 'navbar.html' %}
 
-
-    <div class="container">
-
+    <div class="container-fluid">
+      <div class="row">
+      {% if user.is_authenticated %}
+        {% include 'sidebar.html' %}
+      {% else %}
+        <br>
+      {% endif %}
       {% block content %}
       {% endblock %}
-
+      </div>
     </div> <!-- /container -->
+
 
     {% include 'javascript.html' %}
 
