@@ -1,0 +1,1 @@
+pylint --rcfile ../pylint.rc -r n -f colorized --disable=duplicate-code,invalid-name,no-init,old-style-class,too-few-public-methods,unused-argument --ignore migrations,templates manage.py dt users

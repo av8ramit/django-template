@@ -29,7 +29,7 @@ DEBUG = True
 EMAIL_HOST = 'smtp.sendgrid.com'
 EMAIL_HOST_USER = 'av8ramit'
 EMAIL_MAIN = 'contact@djangotemplate.com'
-EMAIL_HOST_PASSWORD = '#' #WARNING: Insert real sendgrid password here.
+EMAIL_HOST_PASSWORD = 'marchboy1' #WARNING: Insert real sendgrid password here.
 EMAIL_PORT = 587
 EMAIL_USER_TLS = True
 
@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+
+    #Project applications
+    'users',
 ]
 
 SITE_ID = 1
@@ -68,11 +71,13 @@ AUTHENTICATION_BACKENDS = (
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 #allauth Configuration
+AUTH_USER_MODEL = 'users.MyUser'
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 LOGIN_REDIRECT_URL = "/"
+ACCOUNT_SIGNUP_FORM_CLASS = "users.forms.UserCreationForm"
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
