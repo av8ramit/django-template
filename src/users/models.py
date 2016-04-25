@@ -75,11 +75,14 @@ class MyUser(AbstractBaseUser):
 
     def get_full_name(self):
         '''The user is identified by their email address.'''
-        return "%s %s" %(self.first_name, self.last_name)
+        return "%s %s" % (self.first_name, self.last_name)
 
     def get_short_name(self):
         '''The user is identified by their email address.'''
-        return self.first_name
+        if self.first_name:
+            return self.first_name
+        else:
+            return self.username
 
     def __unicode__(self):
         '''Return the username as the string representation.'''

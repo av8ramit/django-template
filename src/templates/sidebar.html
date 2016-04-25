@@ -1,5 +1,12 @@
+{% load staticfiles %}
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
+        <div class="profile">
+            <img class="img-circle" src="{% static 'img/users/profile.jpg' %}" width="100" height="100" class="img-responsive">
+            <h3>{{ user.get_full_name }}</h3>
+            <p>Affiliated Entity</p>
+        </div>
+        <hr>
         <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Reports</a></li>
         <li><a href="#">Analytics</a></li>
