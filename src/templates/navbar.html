@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" href="/">Django Template</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
-<!--               <li><a class="notification-toggle" href="#">Notifications</a></li> -->
-          <li><a href="{% url 'account_logout' %}">Logout</a></li>
+<!--               <li><a class="notification-toggle" href="#">Notifications</a></li>
+ -->          <li><a href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
           <li><a href="{% url 'account_login' %}">Login</a></li>
         {% endif %}

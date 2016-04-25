@@ -29,7 +29,7 @@ DEBUG = True
 EMAIL_HOST = 'smtp.sendgrid.com'
 EMAIL_HOST_USER = 'av8ramit'
 EMAIL_MAIN = 'contact@djangotemplate.com'
-EMAIL_HOST_PASSWORD = 'marchboy1' #WARNING: Insert real sendgrid password here.
+EMAIL_HOST_PASSWORD = 'FAKE_PASSWORD' #WARNING: Insert real sendgrid password here.
 EMAIL_PORT = 587
 EMAIL_USER_TLS = True
 
@@ -75,7 +75,7 @@ AUTH_USER_MODEL = 'users.MyUser'
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
-ACCOUNT_EMAIL_VERIFICATION = "optional"
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_SIGNUP_FORM_CLASS = "users.forms.UserCreationForm"
 

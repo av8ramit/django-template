@@ -18,6 +18,8 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from allauth.account.views import confirm_email
+
 from .views import home
 
 urlpatterns = [
@@ -27,7 +29,8 @@ urlpatterns = [
 
 #allauth accounts URLS
 urlpatterns += [
-    url(r'^accounts/', include('allauth.urls'))
+    url(r'^accounts/', include('allauth.urls')),
+    url(r'^verify-email/(?P<key>\w+)/$', confirm_email, name="account_confirm_email"),
 ]
 
 #static file imports
