@@ -103,3 +103,16 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.jumbotron h1 {
+    font-size: 40px;
+}
+.jumbotron h2 {
+    font-size: 35px;
+}
+.jumbotron p {
+    font-size: 16px;
+}
+.jumbotron {
+  padding-top: 20px;
+}
