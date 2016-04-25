@@ -116,3 +116,16 @@ body {
 .jumbotron {
   padding-top: 20px;
 }
+
+.mainpage {
+  min-height: 800px;
+}
+
+.footer {
+  background-color:#C5C5C5;
+  min-height: 60px;
+  padding:20px 0px;
+  text-align:center;
+  margin-top:50px;
+}
+
