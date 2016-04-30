@@ -23,6 +23,7 @@ class MyUserAdmin(UserAdmin):
         (None, {'fields': ('email', 'password')}),
         ('Personal info', {'fields': ('first_name', 'last_name')}),
         ('Permissions', {'fields': ('is_admin', 'is_member')}),
+        ('Personal', {'fields': ('image',)}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
@@ -36,8 +37,7 @@ class MyUserAdmin(UserAdmin):
     ordering = ('email',)
     filter_horizontal = ()
 
-# Now register the new UserAdmin...
+# Now register the new UserAdmin.
 admin.site.register(MyUser, MyUserAdmin)
-# ... and, since we're not using Django's built-in permissions,
-# unregister the Group model from admin.
+# Now unregister the Group model from admin.
 admin.site.unregister(Group)

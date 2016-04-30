@@ -29,7 +29,7 @@ DEBUG = True
 EMAIL_HOST = 'smtp.sendgrid.com'
 EMAIL_HOST_USER = 'av8ramit'
 EMAIL_MAIN = 'contact@djangotemplate.com'
-EMAIL_HOST_PASSWORD = 'FAKE_PASSWORD' #WARNING: Insert real sendgrid password here.
+EMAIL_HOST_PASSWORD = 'marchboy1' #WARNING: Insert real sendgrid password here.
 EMAIL_PORT = 587
 EMAIL_USER_TLS = True
 

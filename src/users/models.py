@@ -5,6 +5,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
+from .utils import upload_location
+
 
 class MyUserManager(BaseUserManager):
     '''Model manager for the MyUser class.'''
@@ -65,6 +67,11 @@ class MyUser(AbstractBaseUser):
         default=False,
         verbose_name='Is Paid Member'
     )
+    image = models.FileField(
+        upload_to=upload_location,
+        null=True,
+        blank=True
+    )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
@@ -95,6 +102,10 @@ class MyUser(AbstractBaseUser):
     def has_perm(self, app_label):
         '''Does the user have permissions to view the app `app_label`?'''
         return self.is_active
+
+    def has_image(self):
+        '''Does the user have a profile image?'''
+        return self.image.name
 
     @property
     def is_staff(self):

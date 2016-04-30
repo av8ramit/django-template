@@ -2,7 +2,11 @@
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <div class="profile">
-            <img class="img-circle" src="{% static 'img/users/profile.jpg' %}" width="100" height="100" class="img-responsive">
+            {% if user.has_image %}
+                <img class="img-circle" src="{{ user.image.url }}" width="100" height="100" class="img-responsive">
+            {% else %}
+                <img class="img-circle" src="{% static 'img/users/profile.jpg' %}" width="100" height="100" class="img-responsive">
+            {% endif %}
             <h3>{{ user.get_full_name }}</h3>
             <p>Affiliated Entity</p>
         </div>

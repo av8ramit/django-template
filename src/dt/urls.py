@@ -20,6 +20,8 @@ from django.contrib import admin
 
 from allauth.account.views import confirm_email
 
+from users import views as users_views
+
 from .views import home
 
 urlpatterns = [
@@ -31,6 +33,11 @@ urlpatterns = [
 urlpatterns += [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^verify-email/(?P<key>\w+)/$', confirm_email, name="account_confirm_email"),
+]
+
+#user model URLS
+urlpatterns += [
+    url(r'^edit_profile/$', users_views.edit_profile, name='edit_profile'),
 ]
 
 #static file imports

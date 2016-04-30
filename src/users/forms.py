@@ -45,3 +45,12 @@ class UserChangeForm(forms.ModelForm):
         '''Regardless of what the user provides, return the initial value. This is done here, rather
         than on the field, because the field does not have access to the initial value.'''
         return self.initial["password"]
+
+
+class EditProfileForm(forms.ModelForm):
+    '''A form for updating the profile image for a user.'''
+
+    class Meta:
+        '''Meta class invocation for MyUser.'''
+        model = MyUser
+        fields = ('first_name', 'last_name', 'image',)
