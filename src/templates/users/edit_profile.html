@@ -5,13 +5,17 @@
 
 {% block content %}
 
-<div class="col-sm-6 col-sm-offset-3 main">
+<div class="col-sm-7 col-sm-offset-3 main">
 	<div class="jumbotron">
 		<h1>Edit Profile</h1>
+
 		<form method='POST' action='' enctype='multipart/form-data'> {% csrf_token %}
 			{{ form|crispy }}
-			<input type='submit' class='btn btn-success' value='Update Profile' />
+			<input type='submit' class='btn btn-success btn-block' value='Update Profile' />
 		</form>
+		<hr>
+		<a href="{% url 'account_email' %}" class="btn btn-primary btn-block" role="button">Change Email</a>
+
 	</div>
 </div>
 
