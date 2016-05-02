@@ -3,7 +3,7 @@
     <ul class="nav nav-sidebar">
         <div class="profile">
             {% if user.has_image %}
-                <img class="img-circle" src="{{ user.image.url }}" width="100" height="100" class="img-responsive">
+                <a href="{% url 'edit_profile' %}"><img class="img-circle" src="{{ user.image.url }}" width="100" height="100" class="img-responsive"></a>
             {% else %}
                 <img class="img-circle" src="{% static 'img/users/profile.jpg' %}" width="100" height="100" class="img-responsive">
             {% endif %}

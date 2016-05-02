@@ -20,6 +20,7 @@ from django.contrib import admin
 
 from allauth.account.views import confirm_email
 
+from contact import views as contact_views
 from users import views as users_views
 
 from .views import home
@@ -38,6 +39,11 @@ urlpatterns += [
 #user model URLS
 urlpatterns += [
     url(r'^edit_profile/$', users_views.edit_profile, name='edit_profile'),
+]
+
+#contact model URLS
+urlpatterns += [
+    url(r'^contact_us/$', contact_views.contact_us, name='contact_us'),
 ]
 
 #static file imports

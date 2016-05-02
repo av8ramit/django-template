@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
     #Project applications
     'users',
+    'contact',
 ]
 
 SITE_ID = 1
