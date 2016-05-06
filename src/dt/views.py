@@ -5,4 +5,7 @@ from django.shortcuts import render
 def home(request):
     '''Return the view to the home page.'''
     context = {}
-    return render(request, "home.html", context)
+    if request.user.is_authenticated():
+        return render(request, "home_user.html", context)
+    else:
+        return render(request, "home_visitor.html", context)
